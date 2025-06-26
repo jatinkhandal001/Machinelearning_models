@@ -26,10 +26,10 @@ app = LinearRegression()
 #used to train data 
 app.fit(X, y)
 # Take user input (rrom , area of room)
-room_input = st.number_input("Enter number of rooms:", min_value=1, step=1)
-area_input = st.number_input("Enter area in sqft:", min_value=30, step=10)
+room = st.number_input("Enter number of rooms:", min_value=1, step=1)
+area = st.number_input("Enter area in sqft:", min_value=30, step=10)
 # This will Predict and show result as price 
 if st.button("Predict Rent Price"):
-    input_data = np.array([[room_input, area_input]])
+    input_data = np.array([[room, area]])
     predicted_price = app.predict(input_data)[0]
     st.success(f"💰 Estimated Price: ₹{predicted_price:,.0f}")
